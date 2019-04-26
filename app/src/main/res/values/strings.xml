@@ -5,4 +5,9 @@
     <string name="notes">Notes</string>
     <string name="settings">Settings</string>
     <string name="create_note">Create Note</string>
+    <string name="title">Title</string>
+    <string name="your_note">Your note :)</string>
+    <string name="is_important">Is Important -</string>
+    <string name="hide_title">Hide Title -</string>
+    <string name="choose_color">Choose Color Accent -</string>
 </resources>

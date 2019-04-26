@@ -27,4 +27,8 @@ public abstract class BaseFragment extends Fragment {
     protected void setToolbarTitle(String title) {
         activity.toolbar(title);
     }
+
+    protected void showToolbar(boolean show) {
+        activity.showToolbar(show);
+    }
 }

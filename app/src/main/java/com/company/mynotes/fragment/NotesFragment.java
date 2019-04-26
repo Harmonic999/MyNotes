@@ -38,14 +38,16 @@ public class NotesFragment extends BaseFragment {
                              @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_notes, container, false);
+        showToolbar(true);
         setToolbarTitle(getString(R.string.notes));
+
         RecyclerView rvNotes = view.findViewById(R.id.rv_notes);
         StaggeredGridLayoutManager manager = new StaggeredGridLayoutManager(2, 1);
         rvNotes.setLayoutManager(manager);
 
         //FIXME replace with real data
         List<BaseNote> notes = new ArrayList<>();
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 25; i++) {
             notes.add(new SimpleNote(null));
         }
 
@@ -65,7 +67,7 @@ public class NotesFragment extends BaseFragment {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.action_create) {
-            pushFragment(new CreateNoteFragment());
+            pushFragment(new CreateSimpleNoteFragment());
         }
 
         return super.onOptionsItemSelected(item);

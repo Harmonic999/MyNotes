@@ -60,8 +60,6 @@ public class MainActivity
     public boolean onOptionsItemSelected(MenuItem menuItem) {
         int id = menuItem.getItemId();
 
-        Log.i("tag", "options");
-
         switch (id) {
             case android.R.id.home:
                 super.onBackPressed();
@@ -88,6 +86,14 @@ public class MainActivity
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    void showToolbar(boolean show) {
+        if (show) {
+            actionBar.show();
+        } else {
+            actionBar.hide();
+        }
     }
 
 }
