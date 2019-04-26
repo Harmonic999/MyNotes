@@ -4,10 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="@dimen/notes_margin"
     android:foreground="?android:attr/selectableItemBackground"
-    app:cardCornerRadius="@dimen/cards_corner_radius"
     android:minHeight="50dp"
+    app:cardCornerRadius="@dimen/cards_corner_radius"
     app:cardElevation="@dimen/notes_elevation">
 
     <LinearLayout

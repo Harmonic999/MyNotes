@@ -31,11 +31,11 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NoteHolder> 
 
         switch (viewType) {
             case BaseNote.TYPE_SIMPLE:
-                holderView = inflater.inflate(R.layout.simple_note, parent, false);
+                holderView = inflater.inflate(R.layout.item_simple_note, parent, false);
                 return new SimpleNoteHolder(holderView);
 
             default:
-                holderView = inflater.inflate(R.layout.multi_note, parent, false);
+                holderView = inflater.inflate(R.layout.item_multi_note, parent, false);
                 return new MultiNoteHolder(holderView);
         }
     }

@@ -24,7 +24,7 @@ public abstract class BaseFragment extends Fragment {
         activity.getFragmentStack().replace(fragment);
     }
 
-    protected void toolbar(String title, boolean showHome) {
-        activity.toolbar(title, showHome);
+    protected void setToolbarTitle(String title) {
+        activity.toolbar(title);
     }
 }

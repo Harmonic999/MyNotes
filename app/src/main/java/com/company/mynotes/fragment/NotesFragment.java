@@ -3,6 +3,9 @@ package com.company.mynotes.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -22,6 +25,12 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 public class NotesFragment extends BaseFragment {
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        setHasOptionsMenu(true);
+        super.onCreate(savedInstanceState);
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -29,15 +38,14 @@ public class NotesFragment extends BaseFragment {
                              @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_notes, container, false);
-        toolbar(getString(R.string.notes), false);
-
+        setToolbarTitle(getString(R.string.notes));
         RecyclerView rvNotes = view.findViewById(R.id.rv_notes);
         StaggeredGridLayoutManager manager = new StaggeredGridLayoutManager(2, 1);
         rvNotes.setLayoutManager(manager);
 
         //FIXME replace with real data
         List<BaseNote> notes = new ArrayList<>();
-        for (int i = 0; i < 25; i++) {
+        for (int i = 0; i < 3; i++) {
             notes.add(new SimpleNote(null));
         }
 
@@ -45,5 +53,21 @@ public class NotesFragment extends BaseFragment {
         rvNotes.setAdapter(notesAdapter);
 
         return view;
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.notes_fragment_menu, menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.action_create) {
+            pushFragment(new CreateNoteFragment());
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

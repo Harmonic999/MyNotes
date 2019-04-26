@@ -9,6 +9,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 
 import com.company.mynotes.fragment.NotesFragment;
@@ -20,6 +21,7 @@ public class MainActivity
 
     private FragmentBackStack fragmentBackStack;
 
+    private ActionBar actionBar;
     private DrawerLayout drawer;
 
     @Override
@@ -28,6 +30,10 @@ public class MainActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        actionBar = getSupportActionBar();
+
+        NavigationView navigationView = findViewById(R.id.navigation_view);
+        navigationView.setNavigationItemSelectedListener(this);
 
         drawer = findViewById(R.id.drawer_layout);
 
@@ -40,24 +46,21 @@ public class MainActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = findViewById(R.id.navigation_view);
-        navigationView.setNavigationItemSelectedListener(this);
-
         fragmentBackStack = new FragmentBackStack(getSupportFragmentManager(), R.id.fl_content);
         fragmentBackStack.replace(new NotesFragment());
     }
 
-    void toolbar(String title, boolean showBack) {
-        ActionBar actionBar = getSupportActionBar();
+    void toolbar(String title) {
         if (actionBar != null) {
             actionBar.setTitle(title);
-            actionBar.setDisplayHomeAsUpEnabled(showBack);
         }
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem menuItem) {
         int id = menuItem.getItemId();
+
+        Log.i("tag", "options");
 
         switch (id) {
             case android.R.id.home:
