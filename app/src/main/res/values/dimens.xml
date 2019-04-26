@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="notes_elevation">5dp</dimen>
+    <dimen name="notes_margin">3dp</dimen>
+    <dimen name="cards_corner_radius">3dp</dimen>
+</resources>
