@@ -63,9 +63,9 @@
                         android:id="@+id/et_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
+                        android:layout_marginStart="12dp"
                         android:layout_marginTop="8dp"
-                        android:layout_marginEnd="8dp"
+                        android:layout_marginEnd="12dp"
                         android:background="@android:color/transparent"
                         android:hint="@string/title"
                         android:inputType="text|textCapSentences|textMultiLine"
@@ -77,8 +77,9 @@
                         android:id="@+id/et_note"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="12dp"
                         android:layout_marginBottom="8dp"
                         android:background="@android:color/transparent"
                         android:hint="@string/your_note"
@@ -98,6 +99,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     android:gravity="center_vertical"
+                    android:minHeight="24dp"
                     android:orientation="horizontal">
 
                     <TextView
@@ -109,8 +111,9 @@
                         tools:text="15 Aug 2018 18:20" />
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:id="@+id/iv_is_important"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
                         android:src="@drawable/ic_alert_outline_24dp"
                         android:tint="@android:color/holo_red_light"
                         android:visibility="gone"
@@ -182,6 +185,7 @@
                 android:textColor="@color/black" />
 
             <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/ch_bx_is_important"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
@@ -199,10 +203,11 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/hide_title"
+                android:text="@string/remove_title"
                 android:textColor="@color/black" />
 
             <androidx.appcompat.widget.AppCompatCheckBox
+                android:id="@+id/ch_bx_hide_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
@@ -220,7 +225,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="6dp"
+            android:layout_marginTop="12dp"
             android:layout_marginEnd="32dp"
             android:orientation="horizontal">
 
